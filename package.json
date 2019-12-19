@@ -10,7 +10,7 @@
     "deploy:full": "npm run build:ui && git add . && git commit -m uibuild && git push && npm run deploy",
     "logs:prod": "heroku logs --tail",
     "dev": "node_modules/.bin/nodemon app.js",
-    "start": "NODE_ENV=production node index.js"
+    "start": "node index.js"
   },
   "dependencies": {
     "argon2": "^0.25.1",
