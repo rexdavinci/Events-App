@@ -1,0 +1,36 @@
+{
+  "name": "events_app",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build:ui": "rm -rf build && cd client && npm run build --prod && cp -r build ../",
+    "deploy": "git push heroku master",
+    "deploy:full": "npm run build:ui && git add . && git commit -m uibuild && git push && npm run deploy",
+    "logs:prod": "heroku logs --tail",
+    "dev": "node_modules/.bin/nodemon app.js",
+    "start": "NODE_ENV=production node index.js"
+  },
+  "dependencies": {
+    "argon2": "^0.25.1",
+    "bcryptjs": "^2.4.3",
+    "compression": "^1.7.4",
+    "dataloader": "^2.0.0",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "express-graphql": "^0.9.0",
+    "graphql": "^14.5.8",
+    "graphql-playground-middleware-express": "^1.7.12",
+    "jsonwebtoken": "^8.5.1",
+    "morgan": "^1.9.1",
+    "object-sizeof": "^1.5.2",
+    "pg": "^7.14.0",
+    "pg-hstore": "^2.3.3",
+    "sequelize": "^5.21.3",
+    "sequelize-cli": "^5.5.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.2"
+  }
+}

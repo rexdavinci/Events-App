@@ -1,0 +1,44 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  box-sizing: border-box;
+}
+
+
+.form-control label,
+.form-control input,
+.form-control textarea {
+  width: 100%;
+  display: block
+}
+
+.form-control label {
+  margin-bottom: 0.5rem;
+}
+.form-control{
+  margin-bottom: 1rem
+}
+
+
+.form-actions button,
+.btn{
+  background-color: #2857bb;
+  font: inherit;
+  border: 1px solid #2857bb;
+  border-radius: 3px;
+  padding: 0.25rem 1rem;
+  margin-right: 1rem;
+  box-shadow: 1px 1px 5px rgba(0,0,0,0.26);
+  color: #fff;
+  cursor: pointer
+}
+
+.form-actions button:hover,
+.form-actions button:active,
+.btn:hover,
+.btn:active{
+  background: #2857bb;
+  border-color: #5101d1;
+
+}
