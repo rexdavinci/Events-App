@@ -24,8 +24,9 @@ const App = () => {
             {token && <Route path='/bookings' component={BookingPage}/>}
             {!token && <Redirect from='/bookings' to='/events' exact/>}
         </Switch>
+        <p style={{position: "absolute", bottom: "5px"}}> By: <a target="_blank" href="https://abdhafizahmed.com">Abdulhafiz Ahmed</a> </p>
         </main>
-      </>
+        </>
     </Router>
   );
 }
