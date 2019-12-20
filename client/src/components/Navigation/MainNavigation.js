@@ -4,7 +4,7 @@ import './MainNavigation.css';
 import { AuthContext } from '../../context/auth-context';
 
 const MainNavigation = () => {
-  const {token, logout} = useContext(AuthContext)
+  const {token, logout, email} = useContext(AuthContext)
   
   return (
     <header className="main-navigation">
@@ -13,8 +13,11 @@ const MainNavigation = () => {
       </div>
       <nav className="main-navigation__items">
         <ul>
+          {token && <li style={{color: 'white'}}>
+            Hello {email}
+          </li>}
           {!token && <li>
-            <NavLink to="/auth">Authenticate</NavLink>
+            <NavLink to="/auth">Login / Signup</NavLink>
           </li>}
           <li>
             <NavLink to="/events">Events</NavLink>

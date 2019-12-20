@@ -14,7 +14,6 @@ const app = express()
 app.use(express.static('build'))
 app.use(compress())
 app.use(express.json())
-// app.use(logger('dev'))
 
 app.use((req, res, next) => {
   res.setHeader('Access-Control-Allow-Origin', '*');
@@ -27,7 +26,6 @@ app.use((req, res, next) => {
 });
 
 app.use(isAuth)
-app.use(logger('dev'))
 
 app.use('/graphql', graphqlHTTP({
   schema: graphQlSchema,
@@ -50,7 +48,7 @@ if(process.env.NODE_ENV !== 'production'){
   })
   .then(() => {
     sequelize
-    .sync({force: true})
+    .sync()
     .then(() => {
       console.log('DB sync successful')
     })
@@ -62,6 +60,6 @@ if(process.env.NODE_ENV !== 'production'){
     .catch(err => {
       console.error('Unable to connect to the database:', err)
   })
+} else{
+  app.listen(port)
 }
-
-app.listen(port)

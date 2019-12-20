@@ -106,7 +106,7 @@ const AuthPage = () => {
         console.log(response.errors[0].message)
       }
       const loginOrRegister = action => {
-        return login(action.loginInfo.token, action.id)
+        return login(action.loginInfo.token, action.id, action.email)
       }
       if(loginUser){
         loginOrRegister(loginUser)

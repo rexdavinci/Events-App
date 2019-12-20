@@ -10,7 +10,7 @@
     "deploy:full": "yarn build:ui && git add . && git commit -m uibuild && yarn deploy",
     "logs:prod": "heroku logs --tail",
     "dev": "node_modules/.bin/nodemon app.js",
-    "start": "node index.js"
+    "start": "node app.js"
   },
   "dependencies": {
     "argon2": "^0.25.1",
