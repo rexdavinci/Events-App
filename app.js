@@ -42,7 +42,8 @@ app.use('/playground', playground({
 
 const port = process.env.PORT
 
-sequelize
+if(process.env.NODE_ENV !== 'production'){
+  sequelize
   .authenticate()
   .then(() => {
     console.log('Connection to database successful')
@@ -56,8 +57,11 @@ sequelize
   })
   .then(() => {
     app.listen(port)
+    })
+    .then(() => console.log(`Server started on ${port}`))
+    .catch(err => {
+      console.error('Unable to connect to the database:', err)
   })
-  .then(() => console.log(`Server started on ${port}`))
-  .catch(err => {
-    console.error('Unable to connect to the database:', err)
-})
+}
+
+app.listen(port)
