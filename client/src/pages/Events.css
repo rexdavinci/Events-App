@@ -6,3 +6,9 @@
   width: 30rem;
   max-width: 80%
 }
+
+.form-control>input{
+  padding: 5px;
+  outline: none;
+  border: 1px solid blue;
+}

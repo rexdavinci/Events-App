@@ -1,3 +1,6 @@
 .main-content{
-  margin: 4rem 2.5rem;
+  margin-top: 3.5rem;
+  padding: 1rem;
+  background-color: whitesmoke;
+  height: 100vh
 }

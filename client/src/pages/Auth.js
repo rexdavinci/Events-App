@@ -17,7 +17,7 @@ const AuthPage = () => {
     const email = emailEl.current.value.trim().toLowerCase()
     const password = passwordEl.current.value.trim()
     if(email.length === 0  || password.length === 0){
-      return null
+      alert('Password and email cannot be empty')
     }
 
     let requestBody = {
@@ -103,7 +103,7 @@ const AuthPage = () => {
       const { login: loginUser } = info
       const { createUser } = info
       if(response.errors){
-        console.log(response.errors[0].message)
+        alert(response.errors[0].message)
       }
       const loginOrRegister = action => {
         return login(action.loginInfo.token, action.id, action.email)

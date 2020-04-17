@@ -1,9 +1,12 @@
 import React from 'react';
 
 const HomePage = () => {
-  return (
-    <h1>The Home Page</h1>
-  );
-}
+	return (
+		<React.Fragment>
+			<h1>Welcome to Easy Events</h1>
+			<small>Create and manage your events easily</small>
+		</React.Fragment>
+	);
+};
 
 export default HomePage;
